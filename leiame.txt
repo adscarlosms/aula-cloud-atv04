@@ -1,0 +1,47 @@
+1º Passo - Executar o seguinte script
+--
+-- Estrutura para tabela `quartos`
+--
+
+CREATE TABLE `quartos` (
+  `codigo` int(11) NOT NULL,
+  `descricao` varchar(100) NOT NULL,
+  `tipo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `quartos`
+--
+
+INSERT INTO `quartos` (`codigo`, `descricao`, `tipo`) VALUES
+(1, 'quarto-1', 'luxo'),
+(2, 'quarto-2', 'luxo'),
+(3, 'quarto-3', 'executivo'),
+(4, 'quarto-5', 'executivo');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `quartos`
+--
+ALTER TABLE `quartos`
+  ADD PRIMARY KEY (`codigo`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `quartos`
+--
+ALTER TABLE `quartos`
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+
+
+
+2- Para executar a aplicação do banco de dados : 
+docker run -d -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=root  -e MYSQL_PASSWORD="" -e MYSQL_DATABASE=cloud  mysql/mysql-server:latest
+

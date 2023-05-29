@@ -37,10 +37,10 @@ app.get("/consulta-dados", (request, response) => {
     host: "localhost",
     user: "root",
     password: "",
-    database: "projetofullstack",
+    database: "cloud",
   });
 
-  const query = `select * from quarto`;
+  const query = `select * from quartos`;
 
   conexao.query(query, (erro, listaQuartos) => {
     if (erro) {
